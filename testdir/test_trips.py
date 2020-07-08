@@ -54,6 +54,12 @@ class TestTrip(unittest.TestCase):
         actual_total_time_driven = trips.total_time_driven
         self.assertEqual(expected_total_time_driven, actual_total_time_driven)
 
+    def test_get_total_average_speed(self):
+        trips = Trips()
+        expected_total_average_speed = 0
+        actual_total_average_speed = trips.total_average_speed
+        self.assertEqual(expected_total_average_speed, actual_total_average_speed)
+
 
 if __name__ == '__main__':
     unittest.main()
