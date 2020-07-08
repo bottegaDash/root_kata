@@ -1,6 +1,6 @@
 from Trips import Trips
 import unittest
-from unittest.mock import patch
+from unittest.mock import patch, PropertyMock
 
 
 class TestTrip(unittest.TestCase):
@@ -27,6 +27,15 @@ class TestTrip(unittest.TestCase):
     def test_get_total_miles_driven(self):
         trips = Trips()
         expected_total_miles_driven = 0
+        actual_total_miles_driven = trips.total_miles_driven
+        self.assertEqual(expected_total_miles_driven, actual_total_miles_driven)
+
+    @patch("Trips.Trip")
+    def test_add_total_miles_driven(self, mock_trip):
+        type(mock_trip.return_value).miles_driven = PropertyMock(return_value=10)
+        trips = Trips()
+        trips.add_trip("00:00", "01:00", "39")
+        expected_total_miles_driven = 10
         actual_total_miles_driven = trips.total_miles_driven
         self.assertEqual(expected_total_miles_driven, actual_total_miles_driven)
 

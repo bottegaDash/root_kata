@@ -18,6 +18,10 @@ class Trips:
     def add_trip(self, *args):
         trip = Trip(*args)
         self._trips.append(trip)
+        print("**")
+        print(trip.miles_driven)
+        print("**")
+        self._total_miles_driven += trip.miles_driven
 
     @property
     def total_miles_driven(self):
