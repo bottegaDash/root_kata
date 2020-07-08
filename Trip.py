@@ -1,5 +1,16 @@
 from datetime import datetime
 
+def calculate_speed(miles_driven, time_in_seconds):
+    """
+    Calculates the speed given the miles and time
+
+    :param miles_driven: Float
+    :param time_in_seconds: Float
+    :return: sped: float
+    """
+    seconds_per_hour = 3600
+    time_in_hour = time_in_seconds / seconds_per_hour
+    return miles_driven / time_in_hour
 
 class Trip:
     def __init__(self, start_time, end_time, miles_driven):
