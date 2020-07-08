@@ -59,3 +59,12 @@ class Trip:
         :return: average_speed: Float
         """
         return self._average_speed
+
+    @property
+    def is_valid(self):
+        """
+        Returns boolean stating if trip is valid
+
+        :return: is_valid: boolean
+        """
+        return True

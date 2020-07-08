@@ -35,6 +35,12 @@ class TestTrip(unittest.TestCase):
         actual_average_speed = trip.average_speed
         self.assertEqual(expected_average_speed, actual_average_speed)
 
+    def test_is_valid(self):
+        trip = Trip("06:12", "06:32", "20")
+        expected_is_valid = True
+        actual_is_valid = trip.is_valid
+        self.assertEqual(expected_is_valid, actual_is_valid)
+
 
 if __name__ == '__main__':
     unittest.main()
