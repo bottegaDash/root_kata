@@ -1,19 +1,18 @@
 class Trip:
-    def __init__(self, start_time, end_time, distance):
+    def __init__(self, start_time, end_time, miles_driven):
         """
         The initialization of a Trip Object
         :param start_time: String: format "00:00"
         :param end_time: String: format "00:00"
-        :param distance: String: format "1.0"
+        :param miles_driven: String: format "1.0"
         """
-        self._distance = float(distance)
-
+        self._miles_driven = float(miles_driven)
 
     @property
-    def distance(self):
+    def miles_driven(self):
         """
-        Return the distance of the trip
+        Return the miles_driven of the trip
 
-        :return: distance: Float
+        :return: miles_driven: Float
         """
-        return self._distance
+        return self._miles_driven
