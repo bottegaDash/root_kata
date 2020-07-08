@@ -19,3 +19,11 @@ class Drivers(dict):
                      distance_driven
         """
         self[name].add_trip(*args)
+
+    def sort_total_miles_driven(self):
+        """
+        Sorts the keys by the total_miles_driven connect to the driver
+
+        :return: sorted_keys: an array that has the keys sorted
+        """
+        return sorted(self, key=lambda x: self[x].get_total_miles_driven(), reverse=True)
