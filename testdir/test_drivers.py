@@ -30,6 +30,17 @@ class TestTrip(unittest.TestCase):
         actual_sort_distance = drivers.sort_total_miles_driven()
         self.assertEqual(expected_sort_distance, actual_sort_distance)
 
+    @patch("Drivers.Driver")
+    def test_print_drivers(self, mock_driver):
+        drivers = Drivers()
+        mock_driver().get_total_miles_driven.side_effect = [5, 0, 5, 0]
+        mock_driver().get_total_average_speed.side_effect = [20]
+        drivers.add_driver("Person1")
+        drivers.add_driver("Person2")
+        expected_driver_string = "Person1: 5 miles 20 mph\nPerson2: 0 miles"
+        actual_driver_string = str(drivers)
+        self.assertEqual(expected_driver_string, actual_driver_string)
+
 
 if __name__ == '__main__':
     unittest.main()

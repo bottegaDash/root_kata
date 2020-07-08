@@ -27,3 +27,20 @@ class Drivers(dict):
         :return: sorted_keys: an array that has the keys sorted
         """
         return sorted(self, key=lambda x: self[x].get_total_miles_driven(), reverse=True)
+
+    def __str__(self):
+        """
+        Returns driver as a formatted string
+
+        :return: string
+        """
+        result = []
+        sorted_driver_key = self.sort_total_miles_driven()
+        for driver in sorted_driver_key:
+            distance = round(self[driver].get_total_miles_driven())
+            driver_results = [f"{driver}: {distance} miles"]
+            if distance > 0:
+                speed = round(self[driver].get_total_average_speed())
+                driver_results.append(f"{speed} mph")
+            result.append(" ".join(driver_results))
+        return "\n".join(result)
