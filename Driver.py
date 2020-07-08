@@ -9,10 +9,18 @@ class Driver:
         """
         Calls the add_trip method in Trips
         :param args: an array of parameters that will be passed down to the
-                     last class. typical includes start_time, end_time,
+                     trip class. typical includes start_time, end_time,
                      distance_driven
         """
         self._trips.add_trip(*args)
+
+    def get_trip_total_miles_driven(self):
+        """
+        gets the total miles driven of the trip
+
+        :return: total_miles_driven: Float
+        """
+        return self._trips.total_miles_driven
 
     @property
     def trips(self):
