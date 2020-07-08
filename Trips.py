@@ -15,4 +15,5 @@ class Trips:
         return self._trips
 
     def add_trip(self, *args):
-        Trip(*args)
+        trip = Trip(*args)
+        self._trips.append(trip)
