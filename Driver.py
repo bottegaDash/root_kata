@@ -7,4 +7,9 @@ class Driver:
 
     @property
     def trips(self):
+        """
+        Return the trips object that belongs to the driver
+
+        :return: tips: trips object
+        """
         return self._trips
