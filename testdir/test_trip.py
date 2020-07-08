@@ -1,4 +1,4 @@
-from Trip import Trip
+from Trip.Trip import Trip
 import unittest
 from unittest.mock import patch
 

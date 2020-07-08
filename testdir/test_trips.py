@@ -1,4 +1,4 @@
-from Trips import Trips
+from Trip.Trips import Trips
 import unittest
 from unittest.mock import patch, PropertyMock
 
