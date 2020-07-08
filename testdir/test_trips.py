@@ -60,6 +60,15 @@ class TestTrip(unittest.TestCase):
         actual_total_average_speed = trips.total_average_speed
         self.assertEqual(expected_total_average_speed, actual_total_average_speed)
 
+    @patch("Trips.Trip")
+    @patch("Trips.calculate_speed")
+    def test_calling_calculate_speed(self, mock_calculate_speed, mock_trip):
+        type(mock_trip.return_value).time_driven = PropertyMock(return_value=1800)
+        type(mock_trip.return_value).miles_driven = PropertyMock(return_value=60)
+        trips = Trips()
+        trips.add_trip("00:00", "00:30", "30")
+        mock_calculate_speed.assert_called_with(60, 1800)
+
 
 if __name__ == '__main__':
     unittest.main()

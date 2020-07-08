@@ -1,4 +1,5 @@
 from Trip import Trip
+from trip_helper import calculate_speed
 
 
 class Trips:
@@ -22,6 +23,7 @@ class Trips:
         self._trips.append(trip)
         self._total_miles_driven += trip.miles_driven
         self._total_time_driven += trip.time_driven
+        calculate_speed(self._total_miles_driven, self._total_time_driven)
 
 
     @property
