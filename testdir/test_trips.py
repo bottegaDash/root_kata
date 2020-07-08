@@ -24,6 +24,12 @@ class TestTrip(unittest.TestCase):
         actual_trips_length = len(trips.trips)
         self.assertEqual(expected_trips_length, actual_trips_length)
 
+    def test_get_total_miles_driven(self):
+        trips = Trips()
+        expected_total_miles_driven = 0
+        actual_total_miles_driven = trips.total_miles_driven
+        self.assertEqual(expected_total_miles_driven, actual_total_miles_driven)
+
 
 if __name__ == '__main__':
     unittest.main()
