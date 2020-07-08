@@ -22,7 +22,7 @@ class TestDriver(unittest.TestCase):
     @patch("Driver.Trips")
     def test_get_trip_total_miles_driven(self, mock_trips):
         driver = Driver()
-        mock_trips().total_miles_driven.return_value=10
+        type(mock_trips.return_value).total_miles_driven = PropertyMock(return_value=10)
         expected_total_miles_driven = 10
         actual_total_miles_driven = driver.get_trip_total_miles_driven()
         self.assertEqual(expected_total_miles_driven, actual_total_miles_driven)
