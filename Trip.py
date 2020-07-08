@@ -18,6 +18,9 @@ def calculate_speed(miles_driven, time_in_seconds):
 
 
 class Trip:
+
+    LOWER_SPEED_BOUNDARY = 5.0
+
     def __init__(self, start_time, end_time, miles_driven):
         """
         The initialization of a Trip Object
@@ -67,4 +70,4 @@ class Trip:
 
         :return: is_valid: boolean
         """
-        return True
+        return self.LOWER_SPEED_BOUNDARY <= self._average_speed

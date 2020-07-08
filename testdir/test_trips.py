@@ -41,6 +41,12 @@ class TestTrip(unittest.TestCase):
         actual_is_valid = trip.is_valid
         self.assertEqual(expected_is_valid, actual_is_valid)
 
+    def test_is_not_valid_below_lower_bound(self):
+        trip = Trip("07:00", "08:00", "4")
+        expected_is_valid = False
+        actual_is_valid = trip.is_valid
+        self.assertEqual(expected_is_valid, actual_is_valid)
+
 
 if __name__ == '__main__':
     unittest.main()
