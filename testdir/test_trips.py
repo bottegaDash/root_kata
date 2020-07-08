@@ -39,6 +39,12 @@ class TestTrip(unittest.TestCase):
         actual_total_miles_driven = trips.total_miles_driven
         self.assertEqual(expected_total_miles_driven, actual_total_miles_driven)
 
+    def test_get_total_time_driven(self):
+        trips = Trips()
+        expected_total_time_driven = 0
+        actual_total_time_driven = trips.total_time_driven
+        self.assertEqual(expected_total_time_driven, actual_total_time_driven)
+
 
 if __name__ == '__main__':
     unittest.main()
