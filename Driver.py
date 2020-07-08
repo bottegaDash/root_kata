@@ -22,6 +22,14 @@ class Driver:
         """
         return self._trips.total_miles_driven
 
+    def get_trip_total_time_driven(self):
+        """
+        gets the total time driven of the trip
+
+        :return: total_time_driven: Float in seconds
+        """
+        return self._trips.total_time_driven
+
     @property
     def trips(self):
         """

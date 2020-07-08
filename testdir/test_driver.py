@@ -27,6 +27,14 @@ class TestDriver(unittest.TestCase):
         actual_total_miles_driven = driver.get_trip_total_miles_driven()
         self.assertEqual(expected_total_miles_driven, actual_total_miles_driven)
 
+    @patch("Driver.Trips")
+    def test_get_trip_total_time_driven(self, mock_trips):
+        driver = Driver()
+        type(mock_trips.return_value).total_time_driven = PropertyMock(return_value=1600)
+        expected_total_time_driven = 1600
+        actual_total_time_driven = driver.get_trip_total_time_driven()
+        self.assertEqual(expected_total_time_driven, actual_total_time_driven)
+
 
 if __name__ == '__main__':
     unittest.main()
