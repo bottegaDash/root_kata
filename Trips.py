@@ -20,6 +20,7 @@ class Trips:
         trip = Trip(*args)
         self._trips.append(trip)
         self._total_miles_driven += trip.miles_driven
+        self._total_time_driven += trip.time_driven
 
     @property
     def total_miles_driven(self):

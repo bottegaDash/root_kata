@@ -45,6 +45,15 @@ class TestTrip(unittest.TestCase):
         actual_total_time_driven = trips.total_time_driven
         self.assertEqual(expected_total_time_driven, actual_total_time_driven)
 
+    @patch("Trips.Trip")
+    def test_add_total_time_driven(self, mock_trip):
+        type(mock_trip.return_value).time_driven = PropertyMock(return_value=360)
+        trips = Trips()
+        trips.add_trip("00:00", "01:00", "39")
+        expected_total_time_driven = 360
+        actual_total_time_driven = trips.total_time_driven
+        self.assertEqual(expected_total_time_driven, actual_total_time_driven)
+
 
 if __name__ == '__main__':
     unittest.main()
