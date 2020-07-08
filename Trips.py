@@ -1,3 +1,6 @@
+from Trip import Trip
+
+
 class Trips:
     def __init__(self):
         self._trips = []
@@ -10,3 +13,6 @@ class Trips:
         :return: trips: Array of trip
         """
         return self._trips
+
+    def add_trip(self, *args):
+        Trip(*args)
