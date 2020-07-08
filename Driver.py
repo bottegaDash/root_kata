@@ -5,6 +5,9 @@ class Driver:
     def __init__(self):
         self._trips = Trips()
 
+    def add_trip(self, *args):
+        self._trips.add_trip(*args)
+
     @property
     def trips(self):
         """
