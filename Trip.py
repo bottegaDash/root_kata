@@ -1,5 +1,6 @@
 from datetime import datetime
 
+
 def calculate_speed(miles_driven, time_in_seconds):
     """
     Calculates the speed given the miles and time
@@ -10,7 +11,11 @@ def calculate_speed(miles_driven, time_in_seconds):
     """
     seconds_per_hour = 3600
     time_in_hour = time_in_seconds / seconds_per_hour
-    return miles_driven / time_in_hour
+    miles_per_hour = 0
+    if time_in_hour > 0:
+        miles_per_hour = miles_driven / time_in_hour
+    return miles_per_hour
+
 
 class Trip:
     def __init__(self, start_time, end_time, miles_driven):
