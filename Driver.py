@@ -30,6 +30,13 @@ class Driver:
         """
         return self._trips.total_time_driven
 
+    def get_trip_total_average_speed(self):
+        """
+        get the total average speed
+        :return: total_average_speed: Float in miles per hour
+        """
+        return self._trips.total_average_speed
+
     @property
     def trips(self):
         """
