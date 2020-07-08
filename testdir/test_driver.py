@@ -44,6 +44,5 @@ class TestDriver(unittest.TestCase):
         self.assertEqual(expected_total_average_speed, actual_total_average_speed)
 
 
-
 if __name__ == '__main__':
     unittest.main()
