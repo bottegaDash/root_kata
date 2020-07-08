@@ -1,3 +1,6 @@
+from datetime import datetime
+
+
 class Trip:
     def __init__(self, start_time, end_time, miles_driven):
         """
@@ -8,6 +11,10 @@ class Trip:
         """
         self._miles_driven = float(miles_driven)
 
+        start_date = datetime.strptime(start_time, '%H:%M')
+        end_date = datetime.strptime(end_time, '%H:%M')
+        self._time_driven = (end_date - start_date).total_seconds()
+
     @property
     def miles_driven(self):
         """
@@ -16,3 +23,12 @@ class Trip:
         :return: miles_driven: Float
         """
         return self._miles_driven
+
+    @property
+    def time_driven(self):
+        """
+        Return the time driven in seconds
+
+        :return: time_driven: Float
+        """
+        return self._time_driven
