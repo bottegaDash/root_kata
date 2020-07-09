@@ -1,9 +1,9 @@
 import unittest
 from unittest.mock import patch
-from Drivers import Drivers
+from Driver.Drivers import Drivers
 
 
-@patch("Drivers.Driver")
+@patch("Driver.Drivers.Driver")
 class TestTrip(unittest.TestCase):
 
     def test_add_driver(self, mock_driver):

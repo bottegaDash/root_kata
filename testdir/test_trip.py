@@ -1,9 +1,9 @@
-from Trip.Trip import Trip
+from Driver.Trip.Trip import Trip
 import unittest
 from unittest.mock import patch
 
 
-@patch("Trip.Trip.calculate_speed")
+@patch("Driver.Trip.Trip.calculate_speed")
 class TestTrip(unittest.TestCase):
     def test_miles_driven(self, mock_calculate_speed):
         trip = Trip("00:00", "00:00", "100")

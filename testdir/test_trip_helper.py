@@ -1,4 +1,4 @@
-from Trip.trip_helper import calculate_speed
+from Driver.Trip.trip_helper import calculate_speed
 import unittest
 
 

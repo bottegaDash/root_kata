@@ -1,5 +1,5 @@
-from Trip.Trip import Trip
-from Trip.trip_helper import calculate_speed
+from Driver.Trip.Trip import Trip
+from Driver.Trip.trip_helper import calculate_speed
 
 
 class Trips:

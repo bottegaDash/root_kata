@@ -1,9 +1,9 @@
 import unittest
 from unittest.mock import patch, Mock, PropertyMock
-from Driver import Driver
+from Driver.Driver import Driver
 
 
-@patch("Driver.Trips")
+@patch("Driver.Driver.Trips")
 class TestDriver(unittest.TestCase):
 
     def test_get_trips(self, mock_trips):

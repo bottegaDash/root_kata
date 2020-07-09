@@ -1,4 +1,4 @@
-from Trip.Trips import Trips
+from Driver.Trip.Trips import Trips
 
 
 class Driver:
