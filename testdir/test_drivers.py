@@ -21,7 +21,7 @@ class TestTrip(unittest.TestCase):
     @patch("Drivers.Driver")
     def test_sort_total_miles_driven(self, mock_driver):
         drivers = Drivers()
-        mock_driver().get_total_miles_driven.side_effect = [5, 8, 3, 4]
+        mock_driver().get_trip_total_miles_driven.side_effect = [5, 8, 3, 4]
         drivers.add_driver("driver_5")
         drivers.add_driver("driver_8")
         drivers.add_driver("driver_3")
@@ -33,8 +33,8 @@ class TestTrip(unittest.TestCase):
     @patch("Drivers.Driver")
     def test_print_drivers(self, mock_driver):
         drivers = Drivers()
-        mock_driver().get_total_miles_driven.side_effect = [5, 0, 5, 0]
-        mock_driver().get_total_average_speed.side_effect = [20]
+        mock_driver().get_trip_total_miles_driven.side_effect = [5, 0, 5, 0]
+        mock_driver().get_trip_total_average_speed.side_effect = [20]
         drivers.add_driver("Person1")
         drivers.add_driver("Person2")
         expected_driver_string = "Person1: 5 miles 20 mph\nPerson2: 0 miles"

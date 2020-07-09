@@ -1,4 +1,4 @@
-from Trip import Trip
+from Trip.Trip import Trip
 from Trip.trip_helper import calculate_speed
 
 
@@ -18,8 +18,8 @@ class Trips:
         """
         return self._trips
 
-    def add_trip(self, *args):
-        trip = Trip(*args)
+    def add_trip(self, start_time, end_time, distance_driver):
+        trip = Trip(start_time, end_time, distance_driver)
         if trip.is_valid:
             self._trips.append(trip)
             self._total_miles_driven += trip.miles_driven
