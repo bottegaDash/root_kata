@@ -1,5 +1,5 @@
 import unittest
-from unittest.mock import patch, Mock, PropertyMock, MagicMock
+from unittest.mock import patch
 from Drivers import Drivers
 
 
