@@ -30,16 +30,16 @@ class TestDriver(unittest.TestCase):
     @patch("Driver.Trips")
     def test_get_trip_total_time_driven(self, mock_trips):
         driver = Driver()
-        type(mock_trips.return_value).total_time_driven = PropertyMock(return_value=1600)
-        expected_total_time_driven = 1600
+        type(mock_trips.return_value).total_time_driven = PropertyMock(return_value=0.44)
+        expected_total_time_driven = 0.44
         actual_total_time_driven = driver.get_trip_total_time_driven()
         self.assertEqual(expected_total_time_driven, actual_total_time_driven)
 
     @patch("Driver.Trips")
     def test_get_trip_total_average_speed(self, mock_trips):
         driver = Driver()
-        type(mock_trips.return_value).total_average_speed = PropertyMock(return_value=60)
-        expected_total_average_speed = 60
+        type(mock_trips.return_value).total_average_speed = PropertyMock(return_value=0.02)
+        expected_total_average_speed = 0.02
         actual_total_average_speed = driver.get_trip_total_average_speed()
         self.assertEqual(expected_total_average_speed, actual_total_average_speed)
 

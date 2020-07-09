@@ -18,7 +18,8 @@ class Trip:
 
         start_date = datetime.strptime(start_time, '%H:%M')
         end_date = datetime.strptime(end_time, '%H:%M')
-        self._time_driven = (end_date - start_date).total_seconds()
+        seconds_per_hour = 3600
+        self._time_driven = (end_date - start_date).total_seconds() / seconds_per_hour
 
         self._average_speed = calculate_speed(self._miles_driven, self._time_driven)
 
@@ -34,7 +35,7 @@ class Trip:
     @property
     def time_driven(self):
         """
-        Return the time driven in seconds
+        Return the time driven in hours
 
         :return: time_driven: Float
         """

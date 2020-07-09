@@ -13,7 +13,7 @@ class TestTrip(unittest.TestCase):
 
     def test_time_driven(self, mock_calculate_speed):
         trip = Trip("06:12", "06:32", "100")
-        expected_time_driven = 1200
+        expected_time_driven = 1/3
         actual_time_driven = trip.time_driven
         self.assertEqual(expected_time_driven, actual_time_driven)
 

@@ -26,7 +26,7 @@ class Driver:
         """
         gets the total time driven of the trip
 
-        :return: total_time_driven: Float in seconds
+        :return: total_time_driven: Float in hours
         """
         return self._trips.total_time_driven
 
