@@ -31,7 +31,7 @@ methods from the Driver Object.<br/>
 After creating the Objects, I went ahead and created the Parser Method to parse the input text.
 
 **INSTRUCTIONS**<br/>
-To run this use ```python3.7 main.py testdir/inputtest.txt```<br/> 
+To run this use ```python3.7 main.py testdir/input_text.txt```<br/> 
 To run tests use ```python3.7 -m unittest discover testdir```
 
  
